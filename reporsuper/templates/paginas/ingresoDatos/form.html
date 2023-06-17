@@ -1,0 +1,104 @@
+<form enctype='multipart/form-data' method="post">
+    {% csrf_token %}
+    <div class="table-responsive text-center">
+        <table class="table table-striped
+        table-hover	
+        table-borderless
+        table-primary
+        align-middle">
+            <thead class="table-light">
+                <caption>Table Name</caption>
+                <tr>
+                    <th>Item a supervisar</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr class="table-primary" >
+                        <td scope="row">Supervisor</td>
+                        <td>
+                            <div class="m-1">
+                              <select name='id_supervisor' class="form-select" aria-label="Default select example">
+                            <option selected>Seleccione supervisor</option>
+                            {% for super in supervisor %}
+                                <option value={{super.id}}>{{super.nombre}} {{super.apellido}}</option>
+                            {% endfor %}
+                            </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table-primary" >
+                        <td scope="row">Instalacion</td>
+                        <td>
+                            <select name='id_instalacion' class="form-select" aria-label="Default select example">
+                            <option selected>Ingrese instalacion</option>
+                            {% for instalacion in instalaciones %}
+                                <option value={{instalacion.id}}>{{instalacion.nombre}}</option>
+                            {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="table-primary" >
+                        <td scope="row">Turno</td>
+                        <td><select name='turno' class="form-select" aria-label="Default select example">
+                            <option selected>Ingrese jornada</option>
+                                <option value='Diurno'>Diurno</option>
+                                <option value='Nocturno'>Nocturno</option>
+                            </select></td>
+                    </tr>
+                    <tr class="table-primary" >
+                        <td scope="row">Uniformidad</td>
+                        <td>
+                            <input name='uniformidad' class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Escoger opcion...">
+                            <datalist id="datalistOptions">
+                                <option value="Sin Novedad">
+                                <option value="Con Novedad">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td scope="row">Aseo</td>
+                        <td>
+                            <input name='aseo' class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Escoger opcion...">
+                            <datalist id="datalistOptions">
+                                <option value="Sin Novedad">
+                                <option value="Con Novedad">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td scope="row">Libro de novedades</td>
+                        <td>
+                            <input name='libro_novedades' class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Escoger opcion...">
+                            <datalist id="datalistOptions">
+                                <option value="Sin Novedad">
+                                <option value="Con Novedad">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td scope="row">Libro de asistencia</td>
+                        <td>
+                            <input name='libro_asistencia' class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Escoger opcion...">
+                            <datalist id="datalistOptions">
+                                <option value="Sin Novedad">
+                                <option value="Con Novedad">
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td scope="row">Novedades:</td>
+                        <td>
+                            <textarea name='novedades' type='text' class="form-control" placeholder="Novedades..." ></textarea>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    
+                </tfoot>
+        </table>
+    </div>
+    
+    <input class="btn btn-success" type="submit" value="Registrar supervision">
+</form>

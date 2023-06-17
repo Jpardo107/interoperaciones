@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Pauta diaria {% endblock  %}.
+
+{% block contenido %}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Registrar Instalacion</h4>
+            {% include 'paginas/ingresoDatos/formInstalacion.html' %}
+        </div>
+    </div>
+    
+    
+{% endblock contenido %}
