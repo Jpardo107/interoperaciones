@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'intraoperaciones.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'jpardo107$reportesdjango',
-        'USER': 'jpardo107',
-        'PASSWORD': 'Seb@stian133',
-        'HOST': 'jpardo107.mysql.pythonanywhere-services.com',
+        'NAME': 'reportesdjango',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
         'PORT': '3306'
     }
 }
